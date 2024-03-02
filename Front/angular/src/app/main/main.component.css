@@ -1,0 +1,28 @@
+.main_gft {
+    display: flex;
+}
+
+.control {
+   flex: 1;
+}
+
+.table {
+   flex: 1;
+}
+.form {
+   padding-left: 50px;
+}
+#xValues, #rValues {
+  display: grid;
+  grid-template-columns: repeat(15, 17px);
+  gap: 3px;
+}
+#yValue {
+  width: 200px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+

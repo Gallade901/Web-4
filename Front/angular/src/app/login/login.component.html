@@ -1,0 +1,18 @@
+
+<form>
+  <div>
+    <h2>Введите логин и пароль</h2>
+    <br>
+    UserName
+    <input type="text" id="name_user" [(ngModel)]="name" name="name">
+    <br>
+    Password
+    <input type="password" name="password" id="password_user" [(ngModel)]="password">
+    <br>
+    <button type="submit" (click)="Login()">Войти</button>
+    <br>
+    <a routerLink="/register">Зарегистрироваться</a>
+    <br>
+    <a routerLink="/">Таймер</a>
+  </div>
+</form>

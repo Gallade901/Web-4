@@ -1,0 +1,81 @@
+<div class="main_gft">
+  <div (click)="outServ()">
+    <a >Выйти</a>
+  </div>
+  <div class="control">
+    <div class="plot">
+      <canvas #plot class="graph-canvas_points" id="plot__canvas" width="500" height="500" (click)="canvasClick($event)"></canvas>
+    </div>
+    <div class="form">
+      <form [formGroup]="profileForm" id="pointForm" (ngSubmit)="handleSubmit()">
+        <p>Enter X:</p>
+        <div id="xValues" formGroupName="myCheckboxGroupX">
+          <input formControlName="x_3" type="checkbox" id="x-3" value="-3" (change)="updateX('-3')">
+          <label for="x-3">-3</label><br>
+          <input formControlName="x_2" type="checkbox" id="x-2" value="-2" (change)="updateX('-2')">
+          <label for="x-2">-2</label><br>
+          <input formControlName="x_1" type="checkbox" id="x-1" value="-1" (change)="updateX('-1')">
+          <label for="x-1">-1</label><br>
+          <input formControlName="x0" type="checkbox" id="x0" value="0" (change)="updateX('0')">
+          <label for="x0">0</label><br>
+          <input formControlName="x1" type="checkbox" id="x1" value="1" (change)="updateX('1')">
+          <label for="x1">1</label><br>
+          <input formControlName="x2" type="checkbox" id="x2" value="2" (change)="updateX('2')">
+          <label for="x2">2</label><br>
+          <input formControlName="x3" type="checkbox" id="x3" value="3" (change)="updateX('3')">
+          <label for="x3">3</label><br>
+          <input formControlName="x4" type="checkbox" id="x4" value="4" (change)="updateX('4')">
+          <label for="x4">4</label><br>
+          <input formControlName="x5" type="checkbox" id="x5" value="5" (change)="updateX('5')">
+          <label for="x5">5</label><br>
+        </div>
+        <br>
+        <p>Enter Y:</p>
+        <input formControlName="y" type="text" id="yValue" min="-3" max="3" maxlength="9" placeholder="Введите число от -3 до 3">
+        <br><br>
+        <p>Enter Radius (R): {{lastR}}</p>
+        <div id="rValues" formGroupName="myCheckboxGroupR">
+          <input formControlName="r_3" type="checkbox" id="r-3" value="-3">
+          <label for="r-3">-3</label><br>
+          <input formControlName="r_2" type="checkbox" id="r-2" value="-2">
+          <label for="r-2">-2</label><br>
+          <input formControlName="r_1" type="checkbox" id="r-1" value="-1">
+          <label for="r-1">-1</label><br>
+          <input formControlName="r0" type="checkbox" id="r0" value="0">
+          <label for="r0">0</label><br>
+          <input formControlName="r1" type="checkbox" id="r1" value="1" (change)="updateLastR('1')">
+          <label for="r1">1</label><br>
+          <input formControlName="r2" type="checkbox" id="r2" value="2" (change)="updateLastR('2')">
+          <label for="r2">2</label><br>
+          <input formControlName="r3" type="checkbox" id="r3" value="3" (change)="updateLastR('3')">
+          <label for="r3">3</label><br>
+          <input formControlName="r4" type="checkbox" id="r4" value="4" (change)="updateLastR('4')">
+          <label for="r4">4</label><br>
+          <input formControlName="r5" type="checkbox" id="r5" value="5" (change)="updateLastR('5')">
+          <label for="r5">5</label><br>
+        </div>
+        <br>
+        <button type="submit" value="Submit" [disabled]="!profileForm.valid">Submit</button>
+      </form>
+      <button (click)="clearReqs()">Clear</button>
+    </div>
+  </div>
+  <div class="table">
+    <table>
+      <tr>
+        <th>X</th>
+        <th>Y</th>
+        <th>R</th>
+        <th>Проверка</th>
+      </tr>
+      @for(res of reqs; track res.x) {
+      <tr>
+        <td> {{res.x}} </td>
+        <td> {{res.y}} </td>
+        <td> {{res.r}} </td>
+        <td> {{res.ans}} </td>
+      </tr>
+      }
+    </table>
+  </div>
+</div>

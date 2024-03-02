@@ -1,0 +1,13 @@
+<div class="datetime">
+  <h1>Welcome</h1>
+  <br>
+  <p>
+    <span class="datetime__date">{{ currentDateTime | date : 'medium'}}</span>
+  </p>
+  <br/>
+  <p>
+    <button (click)="timer()">Запустить</button>
+  </p>
+  <a routerLink="/login">Авторизация</a>
+</div>
+

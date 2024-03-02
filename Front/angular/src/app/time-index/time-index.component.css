@@ -1,0 +1,8 @@
+.datetime {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.datetime__time {
+    font-size: 72px;
+}

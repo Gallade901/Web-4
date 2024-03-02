@@ -1,0 +1,18 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+<!--<form>-->
+  <div>
+    <h2>Придумайте логин и пароль</h2>
+    <br>
+    UserName
+    <input type="text" id="name_user" name="username" [(ngModel)]="name" formControlName="name">
+    <br>
+    Password
+    <input type="password" id="password_user" name="password" [(ngModel)]="password" formControlName="password">
+    <br>
+    <button type="submit" [disabled]="!registerForm.valid">Зарегистрировать</button>
+    <br>
+    <a routerLink="/login">У меня уже есть аккаунт</a>
+    <br>
+    {{message}}
+  </div>
+</form>
